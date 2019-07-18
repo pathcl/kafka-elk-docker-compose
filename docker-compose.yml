@@ -150,7 +150,7 @@ services:
       - kafka2
       - kafka3
   apache:
-    image: pathcl/flog:0.2
+    image: pathcl/flog:0.4
     volumes:
       - "./apache-logs:/var/log/apache2"
     depends_on:
@@ -167,6 +167,6 @@ services:
     ports:
       - "9000:9000"
     environment:
-      ZK_HOSTS: zoo1:2181,zoo2:2181,zoo3:2181
+      ZK_HOSTS: "zoo1:2181,zoo2:2181,zoo3:2181"
       APPLICATION_SECRET: letmein
       KM_ARGS: -Djava.net.preferIPv4Stack=true
